@@ -3,6 +3,7 @@
 Created on Tue Aug  4 19:30:44 2015
 
 @author: Rick
+    Using Python2.7
 """
 
 import time

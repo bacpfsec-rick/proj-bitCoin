@@ -3,6 +3,7 @@
 Created on Wed Aug  5 12:47:57 2015
 
 @author: Rick
+    Using Python2.7
 """
 
 import random as ran
@@ -76,7 +77,7 @@ class blockchain:
         self.userInfo[no] = new
     
     def trade(self,u,no):
-        tradeType = input("Trade type [S-Sell,B-Buy]: ")
+        tradeType = raw_input("Trade type [S-Sell,B-Buy]: ")
         if tradeType == "S":
             limit = self.userInfo[u][3]
         elif tradeType == "B":
@@ -84,7 +85,7 @@ class blockchain:
         else:
             print("Invalid option!")
             self.trade(no)       
-        amount = int(input("Valid trading amount [1~%d]: " % limit))
+        amount = int(raw_input("Valid trading amount [1~%d]: " % limit))
         source = self.userInfo[u]
         target = self.userInfo[no]     
         # Find the nearby users
@@ -122,16 +123,16 @@ class blockchain:
             print("   C - Check the record of a single user")
             print("   T - Trade with another user")
             print("   E - Exit the system")
-            choice = input("Select your choice (): ")
+            choice = raw_input("Select your choice (): ")
             if choice == "N":
                 self.showNetwork()
             elif choice == "A":
                 self.showUserInfo()
             elif choice == "C":
-                no = int(input("Select no. of target user [0~25]: "))
+                no = int(raw_input("Select no. of target user [0~25]: "))
                 self.checkUserRecord(no)
             elif choice == "T":
-                no = int(input("Select no. of target user [1~25]: "))
+                no = int(raw_input("Select no. of target user [1~25]: "))
                 self.trade(0,no)
             elif choice == "E":
                 break
